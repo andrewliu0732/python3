@@ -1,0 +1,15 @@
+  def twoSum(self, nums: List[int], target: int) -> List[int]:
+        ## solution 1. bruce force ######
+        # for i in range(0, len(nums)-1):
+        #     for j in range(i + 1, len(nums)):
+        #         if (nums[i] + nums[j] == target):
+        #             return [i, j]
+
+        ## solution 2. dict ######
+        dict = {}
+        for i in range(0, len(nums)):
+            dict[nums[i]] = i
+        for i in range(0, len(nums)): # 0 1 2 3 
+            pair = target - nums[i]
+            if (pair in dict) and dict[pair] != i:
+                return [i, dict[pair]]  
