@@ -1,0 +1,20 @@
+# https://www.hackerrank.com/challenges/collections-counter/problem?isFullScreen=true
+
+from collections import Counter
+
+bank = 0
+
+num_of_shoes = int(input())
+shoes = input().split()
+num_of_customers = int(input())
+
+c = Counter(shoes)
+ 
+for i in range(num_of_customers):  
+  customer_lst = input().split()
+  if c[customer_lst[0]] > 0:
+    bank += int(customer_lst[1])
+    c[customer_lst[0]] -= 1
+
+print(bank)
+
